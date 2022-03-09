@@ -24,6 +24,7 @@ import java.util.List;
  */
 @RestController
 public class LoginController {
+
     @Autowired
     private LoginService loginServiceImpl;
 
@@ -53,8 +54,7 @@ public class LoginController {
     //用户信息加载
     @RequestMapping("/user/info")
     public String getInfo(HttpSession session){
-        /*TblUserRecord tblUserRecord = (TblUserRecord) session.getAttribute("userRecordData");
-        System.out.println(tblUserRecord.getTblRole().getRolePrivileges());*/
+        TblUserRecord tblUserRecord = (TblUserRecord) session.getAttribute("userRecordData");
         //获取用户权限模块信息
         /*String[] split = tblUserRecord.getTblRole().getRolePrivileges().split("-");*/
         String[] split={"221","223","226","901"};

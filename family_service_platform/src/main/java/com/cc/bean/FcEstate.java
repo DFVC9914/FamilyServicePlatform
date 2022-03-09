@@ -3,6 +3,10 @@ package com.cc.bean;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import java.io.Serializable;
 
 /**
@@ -13,6 +17,10 @@ import java.io.Serializable;
  * @author cc
  * @since 2022-03-09
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class FcEstate implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -128,209 +136,4 @@ public class FcEstate implements Serializable {
      * 所属公司
      */
     private String company;
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getEstateCode() {
-        return estateCode;
-    }
-
-    public void setEstateCode(String estateCode) {
-        this.estateCode = estateCode;
-    }
-
-    public String getEstateName() {
-        return estateName;
-    }
-
-    public void setEstateName(String estateName) {
-        this.estateName = estateName;
-    }
-
-    public String getEstateAddr() {
-        return estateAddr;
-    }
-
-    public void setEstateAddr(String estateAddr) {
-        this.estateAddr = estateAddr;
-    }
-
-    public Double getCoverArea() {
-        return coverArea;
-    }
-
-    public void setCoverArea(Double coverArea) {
-        this.coverArea = coverArea;
-    }
-
-    public Double getBuildArea() {
-        return buildArea;
-    }
-
-    public void setBuildArea(Double buildArea) {
-        this.buildArea = buildArea;
-    }
-
-    public Double getGreenArea() {
-        return greenArea;
-    }
-
-    public void setGreenArea(Double greenArea) {
-        this.greenArea = greenArea;
-    }
-
-    public Double getRoadArea() {
-        return roadArea;
-    }
-
-    public void setRoadArea(Double roadArea) {
-        this.roadArea = roadArea;
-    }
-
-    public Double getBuildingNumber() {
-        return buildingNumber;
-    }
-
-    public void setBuildingNumber(Double buildingNumber) {
-        this.buildingNumber = buildingNumber;
-    }
-
-    public String getBuildingLeader() {
-        return buildingLeader;
-    }
-
-    public void setBuildingLeader(String buildingLeader) {
-        this.buildingLeader = buildingLeader;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getCompanyBehalf() {
-        return companyBehalf;
-    }
-
-    public void setCompanyBehalf(String companyBehalf) {
-        this.companyBehalf = companyBehalf;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public String getContactPhone() {
-        return contactPhone;
-    }
-
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
-    }
-
-    public String getContactAddr() {
-        return contactAddr;
-    }
-
-    public void setContactAddr(String contactAddr) {
-        this.contactAddr = contactAddr;
-    }
-
-    public Double getCarSpaceDelayRate() {
-        return carSpaceDelayRate;
-    }
-
-    public void setCarSpaceDelayRate(Double carSpaceDelayRate) {
-        this.carSpaceDelayRate = carSpaceDelayRate;
-    }
-
-    public Integer getCarSpaceOverDay() {
-        return carSpaceOverDay;
-    }
-
-    public void setCarSpaceOverDay(Integer carSpaceOverDay) {
-        this.carSpaceOverDay = carSpaceOverDay;
-    }
-
-    public String getEstateType() {
-        return estateType;
-    }
-
-    public void setEstateType(String estateType) {
-        this.estateType = estateType;
-    }
-
-    public Integer getStreetLampNumber() {
-        return streetLampNumber;
-    }
-
-    public void setStreetLampNumber(Integer streetLampNumber) {
-        this.streetLampNumber = streetLampNumber;
-    }
-
-    public Integer getHfcnum() {
-        return hfcnum;
-    }
-
-    public void setHfcnum(Integer hfcnum) {
-        this.hfcnum = hfcnum;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    @Override
-    public String toString() {
-        return "FcEstate{" +
-        "id=" + id +
-        ", estateCode=" + estateCode +
-        ", estateName=" + estateName +
-        ", estateAddr=" + estateAddr +
-        ", coverArea=" + coverArea +
-        ", buildArea=" + buildArea +
-        ", greenArea=" + greenArea +
-        ", roadArea=" + roadArea +
-        ", buildingNumber=" + buildingNumber +
-        ", buildingLeader=" + buildingLeader +
-        ", companyName=" + companyName +
-        ", companyBehalf=" + companyBehalf +
-        ", contact=" + contact +
-        ", contactPhone=" + contactPhone +
-        ", contactAddr=" + contactAddr +
-        ", carSpaceDelayRate=" + carSpaceDelayRate +
-        ", carSpaceOverDay=" + carSpaceOverDay +
-        ", estateType=" + estateType +
-        ", streetLampNumber=" + streetLampNumber +
-        ", hfcnum=" + hfcnum +
-        ", remark=" + remark +
-        ", company=" + company +
-        "}";
-    }
 }

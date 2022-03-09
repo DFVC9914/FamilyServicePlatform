@@ -1,8 +1,8 @@
 package com.cc.service;
 
+import com.cc.bean.FcBuilding;
 import com.cc.bean.FcEstate;
 import com.cc.bean.TblCompany;
-
 import java.util.List;
 
 /**
@@ -12,6 +12,13 @@ import java.util.List;
  * @Version: 1.0
  */
 public interface EstateService {
+
     List<TblCompany> selectCompany();
+
     int insertEstate(FcEstate fcEstate);
+
+    List<FcBuilding> selectBuilding(Integer buildingNumber, String estateCode);
+
+    Integer updateBuilding(FcBuilding fcBuilding);
+
 }

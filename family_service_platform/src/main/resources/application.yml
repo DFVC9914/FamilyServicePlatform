@@ -29,7 +29,7 @@ spring:
     stat-view-servlet:
       url-pattern: "/druid/*"
       allow: 127.0.0.1,192.168.8.109
-      deny: 192.168.1.188
+      deny:
       reset-enable: false
       login-username: admin
       login-password: 123456

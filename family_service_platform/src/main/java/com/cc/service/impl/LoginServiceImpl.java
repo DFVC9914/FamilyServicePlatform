@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 public class LoginServiceImpl implements LoginService {
     @Autowired
     private TblUserRecordMapper tblUserRecordMapper;
+
     public TblUserRecord login(String username,String password){
         return tblUserRecordMapper.login(username,password);
     }

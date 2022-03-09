@@ -9,5 +9,7 @@ import com.cc.bean.TblUserRecord;
  * @Version: 1.0
  */
 public interface LoginService {
-    public TblUserRecord login(String username, String password);
+
+    TblUserRecord login(String username, String password);
+
 }

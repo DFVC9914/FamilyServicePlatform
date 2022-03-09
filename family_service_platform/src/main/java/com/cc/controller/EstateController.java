@@ -2,6 +2,7 @@ package com.cc.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.cc.bean.FcBuilding;
 import com.cc.bean.FcEstate;
 import com.cc.bean.TblCompany;
 import com.cc.returnjson.ReturnObject;
@@ -38,6 +39,24 @@ public class EstateController {
             return JSONObject.toJSONString(new ReturnObject("0","房产编码已存在"));
         }else {
             return JSONObject.toJSONString(new ReturnObject("1","插入数据成功"));
+        }
+    }
+
+    //楼宇查询功能，
+    @RequestMapping("/estate/selectBuilding")
+    public String selectBuilding(Integer buildingNumber,String estateCode){
+        List<FcBuilding> fcBuildings = estateServiceImpl.selectBuilding(buildingNumber, estateCode);
+        return JSONObject.toJSONString(new ReturnObject(fcBuildings));
+    }
+
+    //更新楼宇信息
+    @RequestMapping("/estate/updateBuilding")
+    public String updateBuilding(FcBuilding fcBuilding){
+        Integer result = estateServiceImpl.updateBuilding(fcBuilding);
+        if(1==result){
+            return JSONObject.toJSONString(new ReturnObject("更新楼宇信息成功"));
+        }else {
+            return JSONObject.toJSONString(new ReturnObject("更新楼宇信息失败"));
         }
     }
 }
