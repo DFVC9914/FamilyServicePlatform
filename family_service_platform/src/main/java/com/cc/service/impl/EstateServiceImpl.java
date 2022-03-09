@@ -1,5 +1,6 @@
 package com.cc.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cc.bean.FcEstate;
 import com.cc.bean.TblCompany;
 import com.cc.mapper.FcEstateMapper;
@@ -30,6 +31,13 @@ public class EstateServiceImpl implements EstateService {
 
     @Override
     public int insertEstate(FcEstate fcEstate) {
-        return fcEstateMapper.insert(fcEstate);
+        QueryWrapper<FcEstate> queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("estate_code",fcEstate.getEstateCode());
+        FcEstate findResult = fcEstateMapper.selectOne(queryWrapper);
+        if (null!=findResult){
+            return 0;
+        }else {
+            return fcEstateMapper.insert(fcEstate);
+        }
     }
 }

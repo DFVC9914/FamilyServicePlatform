@@ -18,6 +18,11 @@ public class ReturnObject {
     private String message="ok";
     private Object result;
 
+    public ReturnObject(String message, Object result) {
+        this.message = message;
+        this.result = result;
+    }
+
     public ReturnObject(Object result) {
         this.result = result;
     }
