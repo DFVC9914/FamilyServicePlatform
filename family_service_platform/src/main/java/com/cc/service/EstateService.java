@@ -1,8 +1,9 @@
 package com.cc.service;
 
-import com.cc.bean.FcBuilding;
-import com.cc.bean.FcEstate;
-import com.cc.bean.TblCompany;
+import com.cc.bean.*;
+import com.cc.receive.CellMessage;
+import com.cc.receive.UnitMessage;
+
 import java.util.List;
 
 /**
@@ -21,4 +22,17 @@ public interface EstateService {
 
     Integer updateBuilding(FcBuilding fcBuilding);
 
+    List<FcUnit> selectUnit(UnitMessage unitMessage);
+
+    Integer updateUnit(FcUnit fcUnit);
+
+    List<FcCell> insertCell(CellMessage cellMessage);
+
+    List<FcBuilding> selectBuildingByEstate(String estateCode);
+
+    List<FcUnit> selectUnitByBuildingEstate(String buildingCode);
+
+    List<FcCell> selectCell(String unitCode);
+
+    List<FcEstate> selectEstate(String company);
 }

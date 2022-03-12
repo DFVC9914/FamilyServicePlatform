@@ -9,9 +9,10 @@ import com.cc.returnjson.ReturnObject;
 import com.cc.returnjson.UserInfo;
 import com.cc.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @RestController
+//@CrossOrigin(originPatterns={"*"},methods ={} ,allowedHeaders = "*",allowCredentials = "true")
 public class LoginController {
 
     @Autowired
@@ -39,8 +41,9 @@ public class LoginController {
                         HttpSession session){
         TblUserRecord tblUserRecord = loginServiceImpl.login(username, password);
         tblUserRecord.setToken(tblUserRecord.getUserName());
-        session.setAttribute("userRecordData",tblUserRecord);
         ReturnObject returnObject=new ReturnObject(tblUserRecord);
+        session.setAttribute("userRecordData",tblUserRecord);
+        System.err.println(session);
         return JSONObject.toJSONString(returnObject);
     }
 
@@ -53,10 +56,10 @@ public class LoginController {
 
     //用户信息加载
     @RequestMapping("/user/info")
-    public String getInfo(HttpSession session){
+    public String getInfo(HttpSession session,HttpServletRequest request){
         TblUserRecord tblUserRecord = (TblUserRecord) session.getAttribute("userRecordData");
         //获取用户权限模块信息
-        /*String[] split = tblUserRecord.getTblRole().getRolePrivileges().split("-");*/
+        //String[] split = tblUserRecord.getTblRole().getRolePrivileges().split("-");
         String[] split={"221","223","226","901"};
         //创建权限集合对象
         Permissions permissions=new Permissions();
